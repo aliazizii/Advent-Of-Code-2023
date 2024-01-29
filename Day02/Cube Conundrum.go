@@ -79,7 +79,7 @@ func max(a, b int) int {
 	return b
 }
 
-func partB(cubes []Cube) int {
+func partBCalculator(cubes []Cube) int {
 	multiply := 1
 	maxRed := 0
 	maxBlue := 0
@@ -99,7 +99,7 @@ func partB(cubes []Cube) int {
 	return multiply
 }
 
-func main() {
+func part1() {
 	f, err := os.Open("Day02/input.txt")
 	if err != nil {
 		panic(err)
@@ -108,10 +108,30 @@ func main() {
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
 		s := scanner.Text()
-		//n := TheGameNumber(s)
+		n := TheGameNumber(s)
 		arr := splitGames(s)
 		cubes := cubeArrConvertor(arr)
-		sum += partB(cubes)
+		sum += isValidGame(cubes, n)
 	}
 	fmt.Println(sum)
+}
+
+func part2a() {
+	f, err := os.Open("Day02/input.txt")
+	if err != nil {
+		panic(err)
+	}
+	sum := 0
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		s := scanner.Text()
+		arr := splitGames(s)
+		cubes := cubeArrConvertor(arr)
+		sum += partBCalculator(cubes)
+	}
+	fmt.Println(sum)
+}
+
+func main() {
+	part1()
 }

@@ -63,9 +63,24 @@ func numberOfMatchs(wn []int, hn []int) int {
 	return matchs
 }
 
-var cardInstanceMap = map[int]int{}
+func part1() {
+	rgx := "Card[ ]*[0-9]*:"
+	f, err := os.Open("Day04/input.txt")
+	if err != nil {
+		panic(err)
+	}
+	sum := 0
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		s := scanner.Text()
+		wn, hn := twoListCreator(s, rgx)
+		sum += worthPoint(wn, hn)
+	}
+	fmt.Println(sum)
+}
 
-func main() {
+func part2() {
+	var cardInstanceMap = map[int]int{}
 	const NCards = 213
 	rgx := "Card[ ]*[0-9]*:"
 	f, err := os.Open("Day04/input.txt")
@@ -92,4 +107,8 @@ func main() {
 		sum += cardInstanceMap[i]
 	}
 	fmt.Println(sum)
+}
+
+func main() {
+	part1()
 }

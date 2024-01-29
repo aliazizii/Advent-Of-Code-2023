@@ -36,7 +36,6 @@ func borderDataByDot(ps *[]string) {
 		s += "."
 		(*ps)[i] = s
 	}
-
 	temp_string := ""
 	for i := 0; i < len((*ps)[0]); i++ {
 		temp_string += "."
@@ -86,7 +85,6 @@ func addToMap(i int, idx []int, engineNumber int, indices []int, leftOrRight boo
 			col: indices[0],
 		}
 	}
-
 	_, ok := gearToEngineNumberMap[g]
 	if ok {
 		gearToEngineNumberMap[g] = append(gearToEngineNumberMap[g], engineNumber)
@@ -129,19 +127,6 @@ func iterateOverEngineNumbers(ps *[]string) {
 	}
 }
 
-func partB() {
-	ps := readData("Day03/input.txt")
-	borderDataByDot(ps)
-	iterateOverEngineNumbers(ps)
-	sum := 0
-	for _, ints := range gearToEngineNumberMap {
-		if len(ints) == 2 {
-			sum += ints[0] * ints[1]
-		}
-	}
-	fmt.Println(sum)
-}
-
 func sumOfAllEnginePartNumber(ps *[]string) int {
 	sum := 0
 	pattern := regexp.MustCompile("\\d+")
@@ -158,27 +143,26 @@ func sumOfAllEnginePartNumber(ps *[]string) int {
 	return sum
 }
 
-func partA() {
+func part1() {
 	ps := readData("Day03/input.txt")
 	borderDataByDot(ps)
 	sum := sumOfAllEnginePartNumber(ps)
 	fmt.Println(sum)
 }
 
+func part2() {
+	ps := readData("Day03/input.txt")
+	borderDataByDot(ps)
+	iterateOverEngineNumbers(ps)
+	sum := 0
+	for _, ints := range gearToEngineNumberMap {
+		if len(ints) == 2 {
+			sum += ints[0] * ints[1]
+		}
+	}
+	fmt.Println(sum)
+}
+
 func main() {
-	//s := ".467*.+.*114.."
-	//s = s[2:]
-	//pattern := regexp.MustCompile("[*]")
-	//allSubstringMatches := pattern.FindAllStringIndex(s, -1)
-	//fmt.Println(allSubstringMatches)
-	//ss := s[2:3]
-	//fmt.Printf("%T, %v", ss, ss)
-	partB()
-	//for g, ints := range gearToEngineNumberMap {
-	//	fmt.Println(g, " ", ints)
-	//}
-	//
-	//for _, row := range *ps {
-	//	fmt.Println(row)
-	//}
+	part2()
 }

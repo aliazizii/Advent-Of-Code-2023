@@ -60,8 +60,21 @@ func extractValue(s string) int {
 	return res
 }
 
-func main() {
-	f, err := os.Open("input.txt")
+func part1() {
+	f, err := os.Open("Day01/input.txt")
+	if err != nil {
+		panic(err)
+	}
+	sum := 0
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		sum += extractValue(scanner.Text())
+	}
+	fmt.Println(sum)
+}
+
+func part2() {
+	f, err := os.Open("Day01/input.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -71,4 +84,8 @@ func main() {
 		sum += extractValue(replaceLetterNumberToDigits(scanner.Text()))
 	}
 	fmt.Println(sum)
+}
+
+func main() {
+	part2()
 }

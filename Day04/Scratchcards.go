@@ -68,7 +68,7 @@ var cardInstanceMap = map[int]int{}
 func main() {
 	const NCards = 213
 	rgx := "Card[ ]*[0-9]*:"
-	f, err := os.Open("Day4/input.txt")
+	f, err := os.Open("Day04/input.txt")
 	if err != nil {
 		panic(err)
 	}

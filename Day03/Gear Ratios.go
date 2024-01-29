@@ -130,7 +130,7 @@ func iterateOverEngineNumbers(ps *[]string) {
 }
 
 func partB() {
-	ps := readData("Day3/input.txt")
+	ps := readData("Day03/input.txt")
 	borderDataByDot(ps)
 	iterateOverEngineNumbers(ps)
 	sum := 0
@@ -159,7 +159,7 @@ func sumOfAllEnginePartNumber(ps *[]string) int {
 }
 
 func partA() {
-	ps := readData("Day3/input.txt")
+	ps := readData("Day03/input.txt")
 	borderDataByDot(ps)
 	sum := sumOfAllEnginePartNumber(ps)
 	fmt.Println(sum)

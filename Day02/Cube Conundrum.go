@@ -100,7 +100,7 @@ func partB(cubes []Cube) int {
 }
 
 func main() {
-	f, err := os.Open("Day2/input.txt")
+	f, err := os.Open("Day02/input.txt")
 	if err != nil {
 		panic(err)
 	}

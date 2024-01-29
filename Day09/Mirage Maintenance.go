@@ -32,7 +32,7 @@ func nextValue(arr []int) int {
 }
 
 func readInput() [][]int {
-	f, err := os.Open("Day9/input.txt")
+	f, err := os.Open("Day09/input.txt")
 	if err != nil {
 		panic(err)
 	}

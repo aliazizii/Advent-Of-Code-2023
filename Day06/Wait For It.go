@@ -36,7 +36,7 @@ func fullCountWaysToWin(rs []race) int {
 func partA() {
 	t1 := time.Now()
 	pattern := regexp.MustCompile("[ ]+")
-	f, err := os.Open("Day6/input.txt")
+	f, err := os.Open("Day06/input.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -65,7 +65,7 @@ func partA() {
 func partB() {
 	t1 := time.Now()
 	pattern := regexp.MustCompile("[ ]+")
-	f, err := os.Open("Day6/input.txt")
+	f, err := os.Open("Day06/input.txt")
 	if err != nil {
 		panic(err)
 	}

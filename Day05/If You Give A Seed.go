@@ -48,7 +48,7 @@ func minLoc(seeds []int, mappers []listMapper) int {
 
 func main() {
 	t1 := time.Now()
-	f, err := os.Open("Day5/input.txt")
+	f, err := os.Open("Day05/input.txt")
 	if err != nil {
 		panic(err)
 	}

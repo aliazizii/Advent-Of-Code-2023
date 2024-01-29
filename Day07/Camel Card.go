@@ -20,7 +20,7 @@ const (
 )
 
 func readInput() ([]string, map[string]int) {
-	f, err := os.Open("Day7/input.txt")
+	f, err := os.Open("Day07/input.txt")
 	if err != nil {
 		panic(err)
 	}

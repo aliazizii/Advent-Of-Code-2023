@@ -12,7 +12,7 @@ type ValueNode struct {
 }
 
 func readInput() (string, map[string]ValueNode) {
-	f, err := os.Open("Day8/input.txt")
+	f, err := os.Open("Day08/input.txt")
 	if err != nil {
 		panic(err)
 	}
